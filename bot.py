@@ -22,9 +22,15 @@ def runBot():
                 DMInput = str(input(DMPrompt))
                 if DMInput == '1':
                     dm.spamMessageSingle(userID.findUserID(username))
-                    
+            elif userinput2 == '2':
+                LikePrompt = "Press 1 to like all posts of the selected user."
+                LikeInput = str(input(LikePrompt))
+                if LikeInput == '1':
+                    medias = userID.getMedias(userID.findUserID(username))
+                    like.likeAll(medias)
             userinput2 = str(input(secondPromptString))
         
+
         userinput = str(input(loginPromptString))
 
         #print(user_id2Info)

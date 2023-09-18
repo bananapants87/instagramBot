@@ -3,6 +3,8 @@ import login
 GlobalUsername = ""
 mediaNumber = 20
 user_id = ''
+medias = None
+cl = login.cl
 
 def InsertUsername(userinput):
     global GlobalUsername
@@ -18,10 +20,10 @@ def findUserID(username):
     user_id = cl.user_id_from_username(GlobalUsername)
     return user_id
 
-print(f"{GlobalUsername}, {mediaNumber}")
-
-cl = login.cl
-
+def getMedias(userID):
+    global medias
+    medias = cl.user_medias(user_id, mediaNumber)
+    return medias
 
 
 #user_idInfo = cl.user_info_by_username(GlobalUsername).dict()
